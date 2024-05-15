@@ -1,20 +1,19 @@
 import React from "react";
 import Navbar from "./Components/Navbar.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Shop from "./Pages/Shop.jsx";
-import Category from "./Pages/Category.jsx";
-import Product from "./Pages/Product.jsx";
 import Cart from "./Pages/Cart.jsx"
 import Loginsignup from "./Pages/Loginsignup.jsx"
 import Mens from "./Pages/Mens.jsx";
 import Womens from "./Pages/Womens.jsx";
 import Kids from "./Pages/Kids.jsx";
+import Home from "./Pages/Home.jsx";
+import Wishlist from "./Pages/Wishlist.jsx";
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <> <Navbar /> <Shop/></>
+      element: <> <Navbar /> <Home/></>,
     },
 
 
@@ -45,6 +44,11 @@ const App = () => {
       path: "/login",
       element: <> <Navbar/><Loginsignup/> </>
     },
+
+    {
+      path:"/wishlist",
+      element: <><Navbar/><Wishlist/></>
+    }
 
 
   ]);
