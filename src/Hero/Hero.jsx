@@ -2,6 +2,7 @@ import React from "react";
 import Orange from "./../../Assets/Orange.png";
 import Black from ".//../../Assets/Black.png";
 import Category from "../Components/Category";
+import pppp from "./../../Assets/pppp.png"
 
 const Hero = () => {
   return (
@@ -9,8 +10,8 @@ const Hero = () => {
       <div className="w-full h-screen ">
         <div className="w-full flex justify-center items-center">
           <img
-            className="w-[84rem]  shadow-inherit to-black rounded-xl mt-16"
-            src={Orange}
+            className="w-[84rem]  shadow-inner-lg rounded-xl mt-16"
+            src={pppp}
             alt=""
           />
         </div>
