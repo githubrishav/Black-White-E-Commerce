@@ -1,56 +1,39 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addToProduct } from "../store/productSlice";
-import { addToCart } from "../store/productSlice";
+import React, { useState } from "react";
+import { useEffect } from "react";
+
 const Mens = () => {
-  const [udata, setUdata] = useState(null);
-  const dispatch = useDispatch();
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-      axios.get("https://api.escuelajs.co/api/v1/products").then((response) => {
-      setUdata(response.data);
-      dispatch(addToProduct(response.data));
-    });
+    const fetchP = async () => {
+      const res = await fetch("https://fakestoreapi.com/products");
+      const data = await res.json();
+      console.log(data);
+      setProducts(data);
+    };
+    fetchP();
   }, []);
 
-  const AddToCart = (id)=>{
-    dispatch(addToCart(id));
-  }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {udata 
-        ?udata.map((item) => {
-        return (
-          <div
-            className="item-box px-2 py-1 shadow-lg flex justify-center items-center flex-col"
-            key={item.id}
-          >
-            <div className="img-box h-56 w-52">
-              <img
-                src={item.images[0]}
-                alt=""
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <p className="title">{item.title}</p>
-            <p className="price">${item.price}</p>
-            <div className="flex justify-between gap-4 ">
-              <button className="bg-black text-white px-4 py-2 rounded-lg">
-                Wishlist
-              </button>
-              <button className="bg-black text-white  px-4 py-2 rounded-lg"
+      {products.map((product) => (
+        <div
+          className="item-box px-2 py-1 shadow-lg flex justify-center items-center flex-col"
+          key={product.id}
+        >
+          <img className="img-box h-56 w-52" src={product.image} alt="" />
+          <h4>{product.title}</h4>
+          <h4> $ {product.price}</h4>
+          <h4>{product.rating.count.rate}</h4>
+          <button className="bg-black text-white  px-4 py-2 rounded-lg"
               onClick={()=>AddToCart(item.id)}
               >
                 Add to Cart
               </button>
-            </div>
-          </div>
-        );
-      })
-      :null
-    }
+        </div>
+      ))}
     </div>
   );
 };
+
 export default Mens;
