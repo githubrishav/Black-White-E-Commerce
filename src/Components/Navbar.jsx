@@ -3,8 +3,11 @@ import logo from "./../../Assets/logo.png";
 import cart from "./../../Assets/cart_icon.png";
 import { Link } from "react-router-dom";
 import wishlist from "./../../Assets/wishlist.png";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+const items = useSelector((state)=> state.cart);
+
   return (
     // BODY
     <div className="w-full bg-gradient-to-b from-pink-300  ">
@@ -55,8 +58,8 @@ const Navbar = () => {
               <div className="w-[1rem] h-[1rem] md:w-8 md:h-8">
                 <img src={cart} alt="" />
                 <div className=" flex -my-10 justify-end w-12  h-8 pr-2 pt-1 ">
-                  <p className=" md:block text-white bg-red-600 md:h-5 md:w-5 flex items-center justify-center rounded-2xl">
-                    0
+                  <p className=" md:block text-white bg-red-600  flex items-center justify-center rounded-2xl px-1.5">
+                    {items.length}
                   </p>
                 </div>
               </div>

@@ -7,18 +7,25 @@ const Category = () => {
   const NavigateToMen = () => {
     Navigate("/men");
   };
+  const NavigateToWomen = ()=>{
+    Navigate("/women")
+  }
   return (
     <div className=" w-full flex flex-col gap-56 px-16 py-12">
       <div className="w-full flex items-center justify-between">
         <div
           className="flex flex-col gap-1 w-[16rem] h-[30vh] "
-          onClick={NavigateToMen}>
+          onClick={NavigateToMen}
+        >
           <div className="flex flex-col items-center">
             <img className="object-cover" src={product} alt="img" />
             <p>MEN TOP-WEAR</p>
           </div>
         </div>
-        <div className="flex flex-col gap-1 w-[16rem] h-[30vh] " onClick={NavigateToMen}>
+        <div
+          className="flex flex-col gap-1 w-[16rem] h-[30vh] "
+          onClick={NavigateToMen}
+        >
           <div className="flex flex-col items-center">
             <img className="object-cover" src={product} alt="img" />
             <p>MEN BOTTOM-WEAR</p>
@@ -34,7 +41,10 @@ const Category = () => {
         </div>
       </div>
       <div className="w-full flex items-center justify-between ">
-        <div className="flex flex-col gap-1 w-[16rem] h-[30vh] ">
+        <div
+          className="flex flex-col gap-1 w-[16rem] h-[30vh] "
+          onClick={NavigateToWomen}
+        >
           <img className="object-cover" src={product} alt="img" />
           <p> WOMEN TOP-WEAR</p>
         </div>
