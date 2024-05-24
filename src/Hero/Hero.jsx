@@ -3,6 +3,11 @@ import Orange from "./../../Assets/Orange.png";
 import Black from ".//../../Assets/Black.png";
 import Category from "../Components/Category";
 import pppp from "./../../Assets/pppp.png"
+import prodd from "./../../Assets/prodd.png"
+import Kids from "../Pages/Kids";
+import Slides from "./Slides";
+import Footer from "../Pages/Footer";
+import categ from "./../../Assets/categ.jpg"
 
 const Hero = () => {
   return (
@@ -10,24 +15,24 @@ const Hero = () => {
       <div className="w-full h-screen ">
         <div className="w-full flex justify-center items-center">
           <img
-            className="w-[84rem]  shadow-inner-lg rounded-xl mt-16"
+            className="w-full shadow-inner-lg  mt-16"
             src={pppp}
             alt=""
           />
         </div>
         <div className="w-full flex justify-center items-center">
-          <img
-            className="w-[84rem] h-[44vh] shadow-xl rounded-xl mt-16 cover"
-            src={Black}
+          {/* <img
+            className="w-[84rem] h-[44vh]  mt-16 cover"
+            src={prodd}
             alt=""
-          />
+          /> */}
+          <Slides/>
         </div>
         <div className="w-full ">
-          <div className="w-full h-16 mt-12 mb-12 flex items-center justify-center border border-black">
-            <p className="text-6xl font-semibold ">SHOP BY CATEGORY</p>
-          </div>
+          <img className="flex items-center justify-center w-full" src={categ} alt="" />
           <Category/>
         </div>
+        <Footer/>
       </div>
     </>
   );

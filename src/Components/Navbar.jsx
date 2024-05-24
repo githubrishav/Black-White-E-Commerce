@@ -10,7 +10,7 @@ const items = useSelector((state)=> state.cart);
 
   return (
     // BODY
-    <div className="w-full bg-gradient-to-b from-pink-300  ">
+    <div className="w-full shadow-lg ">
       {/* Navbar here */}
       <div className="w-full h-[6rem] flex flex-col justify-center items-center shadow-3xl sticky z-10 ">
         {/* navbar starts */}
@@ -29,12 +29,15 @@ const items = useSelector((state)=> state.cart);
           </div>
 
           <div className="hidden md:block md:w-[24rem] md:flex md:justify-around md:items-center ">
-            <Link to="/" onClick={""}>
+            <Link className="hover:text-red-400" to="/" onClick={""}>
               HOME
             </Link>
-            <Link to="/men">MEN</Link>
-            <Link to="/women">WOMEN</Link>
-            <Link to="/kids">KID'S</Link>
+            <Link className="hover:text-red-400" to="/men">MEN</Link>
+            <Link className="hover:text-red-400" to="/women">WOMEN</Link>
+            <Link className="hover:text-red-400" to="/kids">KID'S</Link>
+          </div>
+          <div className=" w-[16rem] flex items-center">
+            <input className="w-full px-4 border border-gray-300 rounded-sm" type="text" placeholder="Search for Products" />
           </div>
 
           {/* RIGHT HERE */}
@@ -50,7 +53,7 @@ const items = useSelector((state)=> state.cart);
               </button>
             </Link>
             <Link to ="/wishlist">
-              <div className="w-[1rem] h-[1rem]  md:w-8 md:h-8">
+              <div className="w-[1rem] h-[1rem]  md:w-8 md:h-8 hover:bg-red-600">
                 <img src={wishlist} alt="" />
               </div>
             </Link>
