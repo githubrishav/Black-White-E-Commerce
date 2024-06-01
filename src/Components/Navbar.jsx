@@ -4,6 +4,8 @@ import cart from "./../../Assets/cart_icon.png";
 import { Link } from "react-router-dom";
 import wishlist from "./../../Assets/wishlist.png";
 import { useSelector } from "react-redux";
+import user from "./../../Assets/user.png"
+import search from "./../../Assets/search.svg"
 
 const Navbar = () => {
 const items = useSelector((state)=> state.cart);
@@ -36,8 +38,9 @@ const items = useSelector((state)=> state.cart);
             <Link className="hover:text-red-400" to="/women">WOMEN</Link>
             <Link className="hover:text-red-400" to="/kids">KID'S</Link>
           </div>
-          <div className=" w-[16rem] flex items-center">
-            <input className="w-full px-4 border border-gray-300 rounded-sm" type="text" placeholder="Search for Products" />
+          <div className=" w-[20rem] h-[6vh] mt-4 flex px-2 py-1 items-center gap-2 bg-gray-100 rounded-sm">
+            <img src={search} alt="" />
+            <input className="w-full  py-1 bg-gray-100 outline-none border-none" type="text" placeholder="Search for Products" />
           </div>
 
           {/* RIGHT HERE */}
@@ -48,9 +51,8 @@ const items = useSelector((state)=> state.cart);
             </div>
 
             <Link to="/login">
-              <button className="border hidden md:block border-black text-black px-12 py-2 rounded-3xl items-end hover:bg-gray-100">
-                LOGIN
-              </button>
+             
+             <img className="md:w-7 md:h-7" src={user} alt="" />
             </Link>
             <Link to ="/wishlist">
               <div className="w-[1rem] h-[1rem]  md:w-8 md:h-8 hover:bg-red-600">
@@ -61,7 +63,7 @@ const items = useSelector((state)=> state.cart);
               <div className="w-[1rem] h-[1rem] md:w-8 md:h-8">
                 <img src={cart} alt="" />
                 <div className=" flex -my-10 justify-end w-12  h-8 pr-2 pt-1 ">
-                  <p className=" md:block text-white bg-red-600  flex items-center justify-center rounded-2xl px-1.5">
+                  <p className=" md:block text-white bg-red-600  flex items-center justify-center text-center w-[1.5rem] rounded-full mb-1">
                     {items.length}
                   </p>
                 </div>
@@ -76,7 +78,7 @@ const items = useSelector((state)=> state.cart);
           <input
             type="text"
             className="flex w-full md:hidden border border-black rounded-xl  px-4"
-            placeholder="helloooooo"
+            placeholder="hel"
           />
         </div>
       </div>

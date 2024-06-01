@@ -1,8 +1,14 @@
 import React from 'react'
+import Footer from './Footer'
 
 const Kids = () => {
   return (
-    <div>Kids</div>
+    <div className=''>
+      <div className="mb-[12rem]">
+        kids
+      </div>
+      <Footer/>
+    </div>
   )
 }
 

@@ -8,6 +8,7 @@ import Womens from "./Pages/Womens.jsx";
 import Kids from "./Pages/Kids.jsx";
 import Home from "./Pages/Home.jsx";
 import Wishlist from "./Pages/Wishlist.jsx";
+import Newacc from "./Pages/Newacc.jsx";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const App = () => {
     {
       path:"/wishlist",
       element: <><Navbar/><Wishlist/></>
+    },
+    {
+      path: "/signup",
+      element : <><Navbar/><Newacc/></>
     }
 
 

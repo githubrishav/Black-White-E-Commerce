@@ -26,7 +26,7 @@ const Product = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {products.map((product) => (
         <div
-          className="item-box px-2 py-1 shadow-lg flex justify-center items-center flex-col"
+          className="item-box px-2 py-1 shadow-lg flex justify-center items-center flex-col mb-[8rem]"
           key={product.id}
         >
           <img className="img-box h-56 w-52" src={product.image} alt="" />

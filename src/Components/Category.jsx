@@ -19,7 +19,7 @@ const Category = () => {
     Navigate("/women");
   };
   return (
-    <div className=" w-full flex flex-col gap-8 px-24 py-12">
+    <div className=" w-full flex flex-col gap-8 px-20 py-12">
       <div className="w-full flex justify-around items-center">
         <div
           className="flex flex-col gap-1 w-[15.188rem] h-[19.25rem] "
